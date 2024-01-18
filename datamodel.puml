@@ -1,0 +1,112 @@
+@startuml
+
+class User {
+  - userId: int
+  + username: string
+  - hashedPassword: string
+  + email: string
+  + fullName: string
+  + registrationDate: Date
+  + profileImage: byte[]
+  - phoneNumber: string
+  - address: string
+}
+
+abstract class Listing {
+  - listingId: int
+  + title: string
+  + description: string
+  + price: double
+  + creationDate: Date
+  + owner: User
+  - isActive: boolean
+  - location: string
+}
+
+enum PropertyType {
+  HOUSE
+  APARTMENT
+  COMMERCIAL
+}
+
+enum Condition {
+  NEW
+  LIKE-NEW
+  USED
+  BROKEN
+}
+
+class PropertyListing {
+  + propertyType: string
+  + area: double
+  + rooms: int
+  + address: string
+  + buildYear: int
+}
+
+class VehicleListing {
+  + manufacturer: string
+  + model: string
+  + year: int
+  + mileage: int
+  + condition: string
+  + fuelType: string
+}
+
+class ProductListing {
+  + productName: string
+  + condition: string
+  + manufacturer: string
+}
+
+class DatabaseManager {
+  + saveUser(user: User): boolean
+  + saveListing(listing: Listing): boolean
+  + loadUser(userId: int): User
+  + loadListing(listingId: int): Listing
+}
+
+class UserManager {
+  + registerUser(user: User): boolean
+  + loginUser(username: string, password: string): boolean
+  + updateUserProfile(user: User): boolean
+}
+
+class SearchManager {
+  + searchListingsByCategory(category: Category): Listing[]
+  + searchListingsByKeyword(keyword: string): Listing[]
+}
+
+class ListingManager {
+  + createListing(listing: Listing): boolean
+  + editListing(listing: Listing): boolean
+  + deactivateListing(listing: Listing): boolean
+}
+
+class Category {
+  - categoryId: int
+  + name: string
+  + parentCategory: Category
+  + subCategories: Category[]
+}
+
+User "1" -- "0..*" Listing: Owns
+UserManager "1" -- "0..*" User: Manages
+ListingManager "1" -- "0..*" Listing: Manages
+SearchManager "1" -- "1..*" Listing: Searches
+DatabaseManager "1" -- "0..*" User: Manages
+DatabaseManager "1" -- "0..*" Listing: Manages
+
+Listing <|-- Category
+Listing <|-- PropertyListing
+Listing <|-- ProductListing
+Listing <|-- VehicleListing
+
+PropertyType <|-- PropertyListing
+Condition <|-- VehicleListing
+Condition <|-- ProductListing
+
+Category "0..*" -- "0..1" Category: Parent
+Category "0..1" -- "0..*" Category: Subcategories
+
+@enduml
