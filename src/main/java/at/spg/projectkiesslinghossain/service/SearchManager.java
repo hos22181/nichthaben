@@ -1,6 +1,6 @@
-package at.spg.projectkiesslinghossain.managerClasses;
+package at.spg.projectkiesslinghossain.service;
 
-import at.spg.projectkiesslinghossain.allClasses.Listing;
+import at.spg.projectkiesslinghossain.domain.Listing;
 
 public class SearchManager {
     private Listing[] searchByListing(){

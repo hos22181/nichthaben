@@ -1,13 +1,8 @@
 package at.spg.projectkiesslinghossain;
 
-import at.spg.projectkiesslinghossain.allClasses.Listing;
-import at.spg.projectkiesslinghossain.allClasses.PropertyListing;
-import at.spg.projectkiesslinghossain.allClasses.ProductListing;
-import at.spg.projectkiesslinghossain.allClasses.User;
-import at.spg.projectkiesslinghossain.allClasses.VehicleListing;
-import at.spg.projectkiesslinghossain.enumClasses.ProductCondition;
-import at.spg.projectkiesslinghossain.enumClasses.PropertyType;
-import at.spg.projectkiesslinghossain.enumClasses.VehicleCondition;
+import at.spg.projectkiesslinghossain.domain.ProductCondition;
+import at.spg.projectkiesslinghossain.domain.PropertyType;
+import at.spg.projectkiesslinghossain.domain.VehicleCondition;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

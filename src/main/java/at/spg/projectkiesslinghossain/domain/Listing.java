@@ -1,7 +1,6 @@
-package at.spg.projectkiesslinghossain.allClasses;
+package at.spg.projectkiesslinghossain.domain;
 
 
-import at.spg.projectkiesslinghossain.allClasses.User;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;

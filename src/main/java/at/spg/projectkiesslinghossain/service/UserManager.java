@@ -1,4 +1,4 @@
-package at.spg.projectkiesslinghossain.managerClasses;
+package at.spg.projectkiesslinghossain.service;
 
 public class UserManager {
  /*   List<User> users;

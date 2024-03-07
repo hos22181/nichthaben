@@ -1,4 +1,4 @@
-package at.spg.projectkiesslinghossain.enumClasses;
+package at.spg.projectkiesslinghossain.domain;
 
 public enum VehicleCondition {
     BRAND_NEW,

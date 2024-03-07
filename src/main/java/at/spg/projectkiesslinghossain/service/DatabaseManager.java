@@ -1,7 +1,7 @@
-package at.spg.projectkiesslinghossain.managerClasses;
+package at.spg.projectkiesslinghossain.service;
 
-import at.spg.projectkiesslinghossain.allClasses.Listing;
-import at.spg.projectkiesslinghossain.allClasses.User;
+import at.spg.projectkiesslinghossain.domain.Listing;
+import at.spg.projectkiesslinghossain.domain.User;
 
 public class DatabaseManager {
 

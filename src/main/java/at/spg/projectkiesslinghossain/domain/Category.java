@@ -1,4 +1,4 @@
-package at.spg.projectkiesslinghossain.allClasses;
+package at.spg.projectkiesslinghossain.domain;
 
 import jakarta.persistence.Id;
 

@@ -1,6 +1,4 @@
-package at.spg.projectkiesslinghossain.allClasses;
-
-import at.spg.projectkiesslinghossain.enumClasses.PropertyType;
+package at.spg.projectkiesslinghossain.domain;
 
 import java.time.LocalDate;
 

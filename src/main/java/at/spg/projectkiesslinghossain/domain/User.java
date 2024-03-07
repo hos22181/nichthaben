@@ -1,58 +1,48 @@
-package at.spg.projectkiesslinghossain.repositories;
+package at.spg.projectkiesslinghossain.domain;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.*;
+
 import java.time.LocalDate;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
-public class UserEntity {
+public class User {
+
+    /*public User(){
+        this.userId=7;
+        this.username="fedexchiesa";
+        this.address="Fede Chiesa";
+        this.email="chiesa@juventus.com";
+        this.firstName="Federico";
+        this.lastName="Chiesa";
+        this.hashedPassword=generateHashedPassword();
+        this.phoneNumber="123_123_123";
+        this.registrationDate=LocalDate.now();
+        this.profileImageUrl="https://www.gettyimages.at/detail/nachrichtenfoto/federico-chiesa-of-italy-celebrates-after-scoring-nachrichtenfoto/1327339767";
+    }*/
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId; // primary key
+    protected int userId; //primary key
+    public String username;
+    protected String hashedPassword;
+    protected String email;
+    public String firstName;
+    public String lastName;
 
-    private String username;
-    private String hashedPassword;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private LocalDate registrationDate;
-    private String profileImageUrl;
-    private String phoneNumber;
-    private String address;
+    public LocalDate registrationDate;
+    public String profileImageUrl;
+    public String phoneNumber;
+    public String address;
 
-    public UserEntity(int userId, String username, String hashedPassword, String email, String firstName, String lastName, LocalDate registrationDate, String profileImageUrl, String phoneNumber, String address) {
-        this.userId=(userId);
-        this.username=(username);
-        this.hashedPassword=(hashedPassword);
-        this.email=(email);
-        this.firstName=(firstName);
-        this.lastName=(lastName);
-        this.registrationDate=(registrationDate);
-        this.profileImageUrl=(profileImageUrl);
-        this.phoneNumber=(phoneNumber);
-        this.address=(address);
-    }
-
-    public UserEntity() {
-        this.username = "fedexchiesa";
-        this.address = "Fede Chiesa";
-        this.email = "chiesa@juventus.com";
-        this.firstName = "Federico";
-        this.lastName = "Chiesa";
-        this.hashedPassword = generateHashedPassword();
-        this.phoneNumber = "123_123_123";
-        this.registrationDate = LocalDate.now();
-        this.profileImageUrl = "https://www.gettyimages.at/detail/nachrichtenfoto/federico-chiesa-of-italy-celebrates-after-scoring-nachrichtenfoto/1327339767";
-    }
-
-    // Getters and setters...
 
     private String generateHashedPassword() {
         return "dummyHashedPassword";
     }
+
 
     public int getUserId() {
         return userId;
